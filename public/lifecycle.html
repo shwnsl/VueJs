@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Cycle</title>
+  </head>
+  <body>
+    <h2>Vue LifeCycle</h2>
+    <div id="result">{{message}}</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#result',
+        // data: {
+        //   message: 'Hell Yeah Vue'
+        // }
+        // data: function () {
+        //   return { message: 'Hello SSibal' }
+        // }
+        data: () => {
+          return {
+            message: 'SSibal Vue'
+          }
+        },
+        beforeCreate: function () {
+          console.log('before Create')
+        },
+        created: function () {
+          console.log('created')
+        },
+        mounted: () => {
+          console.log('mounted')
+        },
+        updated: () => {
+          console.log('updated')
+        }
+      })
+    </script>
+  </body>
+</html>
